@@ -6,15 +6,12 @@ ini_set('max_execution_time', 3600);
 $rootPath = $_SERVER['DOCUMENT_ROOT'] . "vsk/";
 $servicePath =  $rootPath . "ffmpeg_aug_2013/bin/ffmpeg.exe"; // use proper ffmpeg path in linux
 $mp4boxPath =  $rootPath . "mp4box/MP4Box.exe"; // use proper mp4box path in linux
-//************************************************
-// Multiple Thumbs Grabbing Example
-//************************************************
 $mhandler = new MediaHandler();
 $mhandler->servicePath = $servicePath;
-$mhandler->inputPath = $rootPath . "contents/hls/";
-$mhandler->outputPath = $rootPath . "contents/hls/stream/";
-$mhandler->fileName = "testvideo.mp4";
-$mhandler->outputfileName = "sample_meta.mp4";
+$mhandler->inputPath = $rootPath . "contents/source/";
+$mhandler->outputPath = $rootPath . "contents/thumbs/";
+$mhandler->fileName = "sample.avi";
+$mhandler->outputfileName = "sample.mp4";
 // preset file
 
 $presetPath = escapeshellarg($rootPath . "ffmpeg_aug_2013/presets/libx264-ipod640.ffpreset");

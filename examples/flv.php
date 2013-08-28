@@ -4,15 +4,12 @@ include_once("../mediahandler.php");
 $rootPath = $_SERVER['DOCUMENT_ROOT'] . "vsk/";
 $servicePath =  $rootPath . "ffmpeg/bin/ffmpeg.exe";
 $flvtoolPath = $rootPath . "flvtool/flvtool2.exe";
-//************************************************
-// Multiple Thumbs Grabbing Example
-//************************************************
 $mhandler = new MediaHandler();
 $mhandler->servicePath = $servicePath;
-$mhandler->inputPath = $rootPath . "contents/hls/";
-$mhandler->outputPath = $rootPath . "contents/hls/stream/";
-$mhandler->fileName = "testvideo.mp4";
-$mhandler->outputfileName = "sample_meta02.flv";
+$mhandler->inputPath = $rootPath . "contents/source/";
+$mhandler->outputPath = $rootPath . "contents/published/";
+$mhandler->fileName = "sample.mp4";
+$mhandler->outputfileName = "sample.flv";
 $mhandler->parameters = "-ab 64k -ar 22050 -s 320x240 -f flv -y";
 $info = $mhandler->Process();
 if($info->errorcode > 0)

@@ -6,8 +6,8 @@ $servicePath =  $rootPath . "ffmpeg/bin/ffmpeg.exe";
 // Get Media Info
 $mhandler = new MediaHandler();
 $mhandler->servicePath = $servicePath;
-$mhandler->inputPath = $rootPath . "contents/hls/";
-$mhandler->fileName = "testvideo.mp4";
+$mhandler->inputPath = $rootPath . "contents/source/";
+$mhandler->fileName = "sample.mp4";
 $info = $mhandler->getInfo();
 if($info->errorcode > 0)
 {

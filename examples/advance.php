@@ -5,17 +5,14 @@ ini_set('max_execution_time', 3600);
 
 $rootPath = $_SERVER['DOCUMENT_ROOT'] . "vsk/";
 $servicePath =  $rootPath . "ffmpeg_aug_2013/bin/ffmpeg.exe";
-//************************************************
-// Multiple Thumbs Grabbing Example
-//************************************************
 $mhandler = new mhpEncoder();
 $mhandler->rootPath = $rootPath;
 $mhandler->servicePath = $servicePath;
-$mhandler->sourcePath = $rootPath . "contents/hls/";
-$mhandler->publishPath = $rootPath . "contents/hls/stream/";
-$mhandler->thumbsDirectory = $rootPath . "contents/hls/stream/";
-$mhandler->sourceFileName = "testvideo.mp4";
-$mhandler->publishFileName = "split.mp4";
+$mhandler->sourcePath = $rootPath . "contents/source/";
+$mhandler->publishPath = $rootPath . "contents/published/";
+$mhandler->thumbsDirectory = $rootPath . "contents/thumbs/";
+$mhandler->sourceFileName = "sample.avi";
+$mhandler->publishFileName = "sample.mp4";
 $mhandler->grabThumbs = false;
 $itags = array();
 //$itags[] = 0; // 240p flv encoding
@@ -36,20 +33,7 @@ if($info->errorcode > 0)
 	echo "<br />.............................................<br />";
 	exit;
 }
-// preset file
-/*$presetPath = escapeshellarg($rootPath . "ffmpeg_july_2012/presets/libx264-ipod640.ffpreset");
-$mhandler->parameters = "-fpre " . $presetPath . " -vcodec libx264 -s 640x380 -b 500k -ab 128k -ar 44100 -y";
-$totalclips = 5;
-$length = 10; // length of each clip in seconds
-$info = $mhandler->splitVideo($length, $totalclips);
-if($info->errorcode > 0)
-{
-	echo ".............................................<br />";
-	echo "Error Code: " . $info->errorcode;
-	echo "<br />" . $info->errorMessage;
-	echo "<br />.............................................<br />";
-	exit;
-} */
+
 // fetch information
 $output = "";
 $output .= "<br />......................................................<br />";

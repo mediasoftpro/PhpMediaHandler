@@ -8,9 +8,9 @@ $servicePath =  $rootPath . "ffmpeg/bin/ffmpeg.exe";
 //************************************************
 $mhandler = new MediaHandler();
 $mhandler->servicePath = $servicePath;
-$mhandler->inputPath = $rootPath . "contents/hls/";
-$mhandler->outputPath = $rootPath . "contents/hls/stream/";
-$mhandler->fileName = "testvideo.mp4";
+$mhandler->inputPath = $rootPath . "contents/source/";
+$mhandler->outputPath = $rootPath . "contents/thumbs/";
+$mhandler->fileName = "sample.mp4";
 $mhandler->outputfileName = "sample";
 $mhandler->parameters = "-f image2 -s 120x100";
 // thumb options
@@ -32,9 +32,9 @@ if($info->errorcode > 0)
 //************************************************
 /*$mhandler = new MediaHandler();
 $mhandler->servicePath = $servicePath;
-$mhandler->inputPath = $rootPath . "contents/hls/";
-$mhandler->outputPath = $rootPath . "contents/hls/stream/";
-$mhandler->fileName = "testvideo.mp4";
+$mhandler->inputPath = $rootPath . "contents/source/";
+$mhandler->outputPath = $rootPath . "contents/thumbs/";
+$mhandler->fileName = "sample.mp4";
 $mhandler->outputfileName = "sample";
 $mhandler->parameters = "-f image2 -s 120x100";
 // thumb options
